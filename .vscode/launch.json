@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedList",
+            "request": "launch",
+            "mainClass": "linkedlist.basicimplementation.LinkedList",
+            "projectName": "dsaPractice_7db3cd99"
+        }
+    ]
+}
