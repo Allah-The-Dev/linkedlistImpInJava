@@ -31,11 +31,30 @@ class LinkedList{
         second.next = third;
 
         //iterating through linked list
+        System.out.println("A new linked list");
+        linkList.printLinkedList(linkList);
+
+        //inserting an element in first position
+        linkList.insertNodeAtFirstPosn(linkList,new Node(4));
+        //printing new list 
+        System.out.println("linked list after node with 4 added in head");
+        linkList.printLinkedList(linkList);
+
+    }
+
+    private void insertNodeAtFirstPosn(LinkedList linkList,Node tempNode){
+        //assign head of linked list to the next of tempnode
+        //as tempNode will be the head
+        tempNode.next = linkList.head;
+        linkList.head = tempNode;
+
+    }
+
+    private void printLinkedList(LinkedList linkList){
         Node tempNode = linkList.head;
-        while(tempNode.next!=null){
-            System.out.println(tempNode.data);
+        while(tempNode!=null){
+            System.out.print(tempNode.data +" -> ");
             tempNode = tempNode.next;
         }
-
     }
 }
