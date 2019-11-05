@@ -46,6 +46,11 @@ class LinkedList{
         System.out.println("\n linked list after node with 5 added after 2");
         linkList.printLinkedList(linkList);
 
+        //inserting node in last
+        linkList.insertNodeInLast(linkList,new Node(6));
+        //printing new modified list
+        System.out.println("\n linked list after node with 6 added in last");
+        linkList.printLinkedList(linkList);
     }
 
     private void insertNodeAtFirstPosn(LinkedList linkList,Node tempNode){
@@ -81,4 +86,15 @@ class LinkedList{
             }
         }
     }
+
+    private void insertNodeInLast(LinkedList linkedList,Node newNode){
+        Node tempNode = linkedList.head;
+        while(tempNode.next != null){
+            tempNode = tempNode.next;
+        }
+        if(tempNode.next == null){
+            tempNode.next = newNode;
+        }
+    }
+
 }
