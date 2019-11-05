@@ -37,7 +37,13 @@ class LinkedList{
         //inserting an element in first position
         linkList.insertNodeAtFirstPosn(linkList,new Node(4));
         //printing new list 
-        System.out.println("linked list after node with 4 added in head");
+        System.out.println("\n linked list after node with 4 added in head");
+        linkList.printLinkedList(linkList);
+
+        //inserting after given node
+        linkList.insertNodeAfterAGivenNode(linkList,second,new Node(5));
+        //printing new modified list
+        System.out.println("\n linked list after node with 5 added after 2");
         linkList.printLinkedList(linkList);
 
     }
@@ -52,9 +58,27 @@ class LinkedList{
 
     private void printLinkedList(LinkedList linkList){
         Node tempNode = linkList.head;
-        while(tempNode!=null){
+        while(tempNode.next !=null){
             System.out.print(tempNode.data +" -> ");
             tempNode = tempNode.next;
+        }
+        if(tempNode.next == null){
+            System.out.println(tempNode.data);
+        }
+    }
+
+    private void insertNodeAfterAGivenNode(LinkedList linkedList,Node nodeAfter,Node newNode){
+        Node tempNode = linkedList.head;
+
+        //what if nodeAfter.data == linkedList.head.data
+        while(tempNode.next != null){
+            if(tempNode.data == nodeAfter.data){
+                newNode.next = tempNode.next;
+                tempNode.next = newNode;
+                break;
+            }else{
+                tempNode = tempNode.next;
+            }
         }
     }
 }
