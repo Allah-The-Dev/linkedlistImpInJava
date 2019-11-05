@@ -1,14 +1,14 @@
 package linkedlist.basicimplementation;
 
-class LinkedList{
+public class LinkedList{
 
     //this head is required at instance level
     //to create head for the linked list
-    Node head;
+    public Node head;
 
-    static class Node{
-        int data;
-        Node next;
+    public static class Node{
+        public int data;
+        public Node next;
 
         Node(int data){
             this.data =  data;
@@ -61,7 +61,7 @@ class LinkedList{
 
     }
 
-    private void printLinkedList(LinkedList linkList){
+    public void printLinkedList(LinkedList linkList){
         Node tempNode = linkList.head;
         while(tempNode.next !=null){
             System.out.print(tempNode.data +" -> ");
