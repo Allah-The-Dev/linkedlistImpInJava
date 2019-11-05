@@ -75,16 +75,14 @@ class LinkedList{
     private void insertNodeAfterAGivenNode(LinkedList linkedList,Node nodeAfter,Node newNode){
         Node tempNode = linkedList.head;
 
-        //what if nodeAfter.data == linkedList.head.data
-        while(tempNode.next != null){
-            if(tempNode.data == nodeAfter.data){
-                newNode.next = tempNode.next;
-                tempNode.next = newNode;
-                break;
-            }else{
-                tempNode = tempNode.next;
-            }
+        //check for node after
+        if(nodeAfter == null){
+            System.out.println("Previous node can not be null");
+            return;
         }
+
+        newNode.next = nodeAfter.next;
+        nodeAfter.next = newNode;
     }
 
     private void insertNodeInLast(LinkedList linkedList,Node newNode){
