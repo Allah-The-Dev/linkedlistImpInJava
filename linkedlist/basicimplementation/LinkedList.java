@@ -1,5 +1,7 @@
 package linkedlist.basicimplementation;
 
+import linkedlist.linkedlistutilities.LinkedListDeletionUtility;;
+
 public class LinkedList{
 
     //this head is required at instance level
@@ -50,6 +52,21 @@ public class LinkedList{
         linkList.insertNodeInLast(linkList,new Node(6));
         //printing new modified list
         System.out.println("\n linked list after node with 6 added in last");
+        linkList.printLinkedList(linkList);
+
+        //deleting node when data part of node is given
+        LinkedListDeletionUtility llDelUtil = new LinkedListDeletionUtility();
+        //deleting mid node 
+        llDelUtil.deleteNode(linkList, 2);
+        System.out.println("linked list after deleting 2 in mid");
+        linkList.printLinkedList(linkList);
+        //deleting starting
+        llDelUtil.deleteNode(linkList, 4);
+        System.out.println("linked list after deleting 4 at starting");
+        linkList.printLinkedList(linkList);
+        //deleting last node
+        llDelUtil.deleteNode(linkList, 6);
+        System.out.println("linked list after deleting 6 in last");
         linkList.printLinkedList(linkList);
     }
 

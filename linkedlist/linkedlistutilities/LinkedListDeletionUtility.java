@@ -10,18 +10,20 @@ public class LinkedListDeletionUtility{
         //if head.data == data 
         if(tempNode.data == data){
             llist.head = llist.head.next;
+            return;
         }else{
-            nodePrevToTemp = tempNode;
-            tempNode = tempNode.next;
-            while(nodePrevToTemp.next != null){
+            while(tempNode.next != null){
+                nodePrevToTemp = tempNode;
+                tempNode = tempNode.next;
                 if(tempNode.data == data){
                     nodePrevToTemp.next = tempNode.next;
-                    break;
-                }else{
-                    nodePrevToTemp = tempNode;
-                    tempNode = tempNode.next;
+                    return;
                 }
             }
+        }
+        if(tempNode.next == null && tempNode.data == data){
+            nodePrevToTemp.next = null;
+            return;
         }
     }
 }
