@@ -8,7 +8,7 @@ public class LinkedListDeletionUtility{
         LinkedList.Node tempNode = llist.head;
         LinkedList.Node nodePrevToTemp = null;
         //if head.data == data 
-        if(tempNode.data == data){
+        if(tempNode != null && tempNode.data == data){
             llist.head = llist.head.next;
             return;
         }else{
