@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FibNumber",
+            "request": "launch",
+            "mainClass": "dynamicprogramming.FibNumber",
+            "projectName": "linkedlistImpInJava_a5542424"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FibNumber",
+            "request": "launch",
+            "mainClass": "dynamicProgramming.FibNumber",
+            "projectName": "linkedlistImpInJava_a5542424"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LinkedList",
             "request": "launch",
             "mainClass": "linkedlist.basicimplementation.LinkedList",
