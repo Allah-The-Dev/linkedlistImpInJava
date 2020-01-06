@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Objects;
 
-class FibNumber{
+class IterativeFibNumber{
 
     static int arr[];
 
@@ -14,19 +14,14 @@ class FibNumber{
         //declare an array for memoization
         if(Objects.isNull(arr))
             arr = new int[n];
-        
-        //check if value is present then return
-        if(arr[n-1] != 0)
-            return arr[n-1];
 
-        //apply recursion
-        if(n == 1 || n == 2)
-            result = 1;
-        else
-            result = getNthFibNum(n-2) + getNthFibNum(n-1);
-        //store new result into array
-        arr[n-1] = result;
-        return result;
+        arr[0] = 1;
+        arr[1] = 1;
+        for(int i = 2; i<n ; i++){
+            arr[i] = arr[i-2] + arr[i-1];
+        }
+         
+        return arr[n-1];
     }
 
     public static void main(String args[]) throws IOException{
